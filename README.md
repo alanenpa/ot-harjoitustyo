@@ -5,4 +5,4 @@
 
 [komentorivi.txt](https://github.com/alanenpa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-muutos
+muutos. vielä lisää muutoksia
