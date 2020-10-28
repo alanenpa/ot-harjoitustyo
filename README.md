@@ -1,3 +1,6 @@
-### Otsikko
+# Ohjelmistotekniikka, harjoitustyö
+## Tehtävät
+### Viikko 1
+[gitlog.txt](https://github.com/alanenpa/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-hieman tekstiä, **osa lihavoituna**, ja *osa kursivoituna.*
+[komentorivi.txt](https://github.com/alanenpa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
