@@ -1,0 +1,113 @@
+commit a01b91f0394aeb3fd191d59c17392a47e28a2869
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Wed Oct 28 11:50:24 2020 +0200
+
+    poista yksi tiedosto ja vaihda toisen nimeä
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ee789eb8845e7bc0c75f6a6e5772f4a85d640d89
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Wed Oct 28 11:40:52 2020 +0200
+
+    lisää kansio tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 01823f556075a6b2a7c4e064758be2a126a333af
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 17:37:29 2020 +0200
+
+    tee muutoksia tiedostoihin eka ja kolmas
+
+ eka.txt    | 6 +-----
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 6 deletions(-)
+
+commit 8c78dbb76681c346f634ac5e77a79c345029eb14
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 17:35:04 2020 +0200
+
+    muuta tiedoston tiedosto.txt nimeksi eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7cb3c18ae40676ca0aba1217dec5489847ec1aac
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 17:27:50 2020 +0200
+
+    poista toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 189a6543d2c86a0e1446503824e06c2aed30e7b9
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 17:16:48 2020 +0200
+
+    poista hieman tekstiä ja lisää tekstiä
+
+ tiedosto.txt | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
+
+commit 99dc4b2c3da9beeebe28759e7a6b88e54c7c830a
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 17:15:14 2020 +0200
+
+    lisää tekstiä
+
+ tiedosto.txt | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+
+commit b3ca8799b8d74f232d1fe7c39645a2bffd6e5fc5
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 16:34:20 2020 +0200
+
+    luo kansio stuff ja sen sisälle tiedosto
+
+ stuff/tervehdys.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 386b47fd4fa91d5d69f7fff511cf0e9b00ba9839
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 16:32:37 2020 +0200
+
+    tee muutoksia tiedostoihin
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit c7f91b9a41bcc2015275e8f1f2a676a4d5add6ed
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 16:31:01 2020 +0200
+
+    luo tiedosto kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0e9b1b770a026763835ea245eb9c02dfe6c2c66d
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 16:28:04 2020 +0200
+
+    tee muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 860dc5289d4cc48b37ebdb462838fb4ca953b0a0
+Author: alanenpa <72764484+alanenpa@users.noreply.github.com>
+Date:   Tue Oct 27 16:18:15 2020 +0200
+
+    luo tiedosto.txt
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
