@@ -5,4 +5,8 @@
 
 [komentorivi.txt](https://github.com/alanenpa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+## Dokumentaaatio
+
+[Vaatimusmäärittely](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
 muutos. vielä lisää muutoksia
