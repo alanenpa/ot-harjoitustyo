@@ -8,7 +8,7 @@ Sovelluksen käynnistyttyä pelaaja painaa "start", jolloin peli alkaa. Matoja o
 ### Jatkokehitysideoita
 - Mahdollisuus valita erilaisia tasoja, joissa mato liikkuu. Mahdollisuus valita myös satunnainen taso (eli sovellus valitsee jonkun tasoista pelaajan puolesta)
 - Pistetaulukko, joka pitää kirjaa parhaista pisteistä sovelluksen käynnin ajan
-- Mahdollisuus valita vaikeusaste, joka määrittää kuinka nopeasti mato liikkuu pelin alkaessa
+- Mahdollisuus valita vaikeusaste, joka määrittää kuinka nopeasti mato liikkuu pelin alkaessa ja sen, kuinka paljon mato kasvaa "ruokaa" syödessä
 - Satunnaisesti ruudulle ilmestyviä "ruokia", jotka poistuvat tietyn ajan kuluttua, ja joista saa myös enemmän pisteitä
 
 
