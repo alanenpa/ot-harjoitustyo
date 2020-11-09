@@ -1,15 +1,14 @@
 
 ## Vaatimusmäärittely
 ### Sovelluksen tarkoitus
-Sovellus on klassinen matopeli Snake graafisella käyttöliittymällä. Pelin idea on ohjata matoa ruudulla ja syödä "ruokaa", joka kasvattaa matoa isommaksi. Mato kuolee, jos se törmää pelikentän laitoihin tai itseensä.
+Sovellus on funktiolaskin graafisella käyttöliittymällä.
+
 ### Sovelluksen tarjoama toiminnallisuus
-Sovelluksen käynnistyttyä pelaaja painaa "start", jolloin peli alkaa. Matoja ohjataan nuolinäppäimillä. Pelin edetessä mato kasvaa pituutta ja sen vauhti kiihtyy. Jokaisesta syödystä "ruoasta" pelaaja saa yhden pisteen. Jos mato kuolee, pelaaja joutuu aloittamaan pelin alusta. Peli on mahdollista pelata loppuun siten, että peliruutu täyttyy kokonaan madon koon ansiosta.
+Sovelluksen käynnistyttyä käyttäjälle avautuu ikkuna, jossa näkyy laskimen näyttö sekä painikkeet eri toiminnoille. Käyttäjä voi syöttää laskimelle luvun, valita toiminnon ja syöttää mahdollisen toisen luvun valitusta toiminnosta riippuen. "Yhtä kuin"-painiketta painettaessa laskin näyttää laskutoimituksen tuloksen.
 
 ### Jatkokehitysideoita
-- Mahdollisuus valita erilaisia tasoja, joissa mato liikkuu. Mahdollisuus valita myös satunnainen taso (eli sovellus valitsee jonkun tasoista pelaajan puolesta)
-- Mahdollisuus valita moniruutuisia tasoja, jossa tasossa liikutaan menemällä peliruudun reunan yli
-- Pistetaulukko, joka pitää kirjaa parhaista pisteistä sovelluksen käynnin ajan
-- Mahdollisuus valita vaikeusaste, joka määrittää kuinka nopeasti mato liikkuu pelin alkaessa ja sen, kuinka paljon mato kasvaa "ruokaa" syödessä
-- Satunnaisesti ruudulle ilmestyviä "ruokia", jotka poistuvat tietyn ajan kuluttua, ja joista saa myös enemmän pisteitä
-
-
+- Erilaisten aritmeettisten laskutoimituksien lisääminen laskimeen (esim. juuri käyttäjän valitsemalla luvulla, kertoma, kombinaatio ja permutaatio jne...)
+- Trigonometriset funktiot
+- Mahdollisuus laittaa luku muistiin ja palauttaa se sieltä
+- Mahdollisuus määritellä muuttuja
+- Mahdollisuus määritellä funktio?
