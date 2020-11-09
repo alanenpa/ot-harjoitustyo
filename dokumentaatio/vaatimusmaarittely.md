@@ -12,3 +12,4 @@ Sovelluksen käynnistyttyä käyttäjälle avautuu ikkuna, jossa näkyy laskimen
 - Mahdollisuus laittaa luku muistiin ja palauttaa se sieltä
 - Mahdollisuus määritellä muuttuja
 - Mahdollisuus määritellä funktio?
+- Harjoittelutila?
