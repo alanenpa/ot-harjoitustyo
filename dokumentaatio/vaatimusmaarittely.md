@@ -1,0 +1,15 @@
+
+## Vaatimusmäärittely
+### Sovelluksen tarkoitus
+Sovellus on funktiolaskin graafisella käyttöliittymällä.
+
+### Sovelluksen tarjoama toiminnallisuus
+Sovelluksen käynnistyttyä käyttäjälle avautuu ikkuna, jossa näkyy laskimen näyttö sekä painikkeet eri toiminnoille. Käyttäjä voi syöttää laskimelle luvun, valita toiminnon ja syöttää mahdollisen toisen luvun valitusta toiminnosta riippuen. Laskimen perusversiolla voi laskea yhteen- ja vähennyslaskuja sekä kerto- ja jakolaskuja. "Yhtä kuin"-painiketta painettaessa laskin näyttää laskutoimituksen tuloksen.
+
+### Jatkokehitysideoita
+- Erilaisten aritmeettisten laskutoimituksien lisääminen laskimeen (esim. potenssi, neliöjuuri/juuri käyttäjän valitsemalla luvulla, kertoma, kombinaatio ja permutaatio jne...)
+- Trigonometriset funktiot
+- Mahdollisuus laittaa luku muistiin ja palauttaa se sieltä
+- Mahdollisuus määritellä muuttuja
+- Mahdollisuus määritellä funktio?
+- Harjoittelutila?
