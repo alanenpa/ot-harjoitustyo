@@ -7,4 +7,5 @@
 | 10.11.| 6    | Lisää JavaFX:n kertausta, projektin suunnittelua, tiedonhakua |
 | 11.11.| 5    | Projektin ideointia, tiedonhakua, käyttöliittymän ja sovelluslogiikan perusteiden luonti |
 | 15.11.| 6    | Käyttöliittymään lisää toimintoja, sovelluslogiikkaan sisältöä, turhien tiedostojen poistamista kansioista |
-| yht   | 24   | | 
+| 17.11.| 5    | Projektin konfiguraatiota, käyttöliittymän kehittäminen, css-tiedoston lisääminen, Testiluokan luominen | 
+| yht   | 29   | | 
