@@ -133,14 +133,6 @@ public class UserInterface extends Application {
         return button;
     }
 
-    private void placeOperationButtons(GridPane pane) {
-        Button plus = createBasicArithmeticOperationButton("+");
-        Button button2 = createBasicArithmeticOperationButton("-");
-        Button button3 = createBasicArithmeticOperationButton("*");
-        Button button4 = createBasicArithmeticOperationButton("/");
-        pane.add(plus,4,0);
-    }
-
     private GridPane createNumPad() {
         GridPane numPad = new GridPane();
         numPad.setAlignment(Pos.CENTER);
