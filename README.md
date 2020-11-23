@@ -10,6 +10,14 @@ Sovellus on funktiolaskin graafisella käyttöliittymällä, jolla on mahdollist
 
 ## Komentorivitoiminnot
 
+#### Testaus
+
+Testit suoritetaan komennolla
 ~~~
-testi
+mvn test
 ~~~
+Testikattavuusraportti generoidaan komennolla
+~~~
+mvn jacoco:report
+~~~
+Kattavuusraporttia löytyy tiedostona polusta *target/site/jacoco/index.html*
