@@ -1,10 +1,7 @@
 # Ohjelmistotekniikka, harjoitustyö
-## Tehtävät
-### Viikko 1
-[gitlog.txt](https://github.com/alanenpa/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+## Funktiolaskin
 
-[komentorivi.txt](https://github.com/alanenpa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
+Sovellus on funktiolaskin graafisella käyttöliittymällä, jolla on mahdollista laskea peruslaskutoimituksia ja joitakin funktiolaskimen tarjoamia laskutoimituksia.
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
