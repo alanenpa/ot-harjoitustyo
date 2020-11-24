@@ -12,7 +12,7 @@ Sovellus on funktiolaskin graafisella käyttöliittymällä, jolla on mahdollist
 
 ## Komentorivitoiminnot
 
-#### Testaus
+### Testaus
 
 Testit suoritetaan komennolla
 ~~~
@@ -23,3 +23,19 @@ Testikattavuusraportti generoidaan komennolla
 mvn jacoco:report
 ~~~
 Kattavuusraporttia löytyy tiedostona polusta *target/site/jacoco/index.html*
+
+### Suoritettavan jarin generointi
+
+jar-tiedosto luodaan komennolla
+~~~
+mvn package
+~~~
+joka luo hakemistoon *target* suoritettavan jar-tiedoston *Calculator-1.0-SNAPSHOT.jar*
+
+### Checkstyle
+
+Tiedostoon checkstyle.xml määritellyt tarkistukset suoritetaan komennolla
+~~~
+mvn jxr:jxr checkstyle:checkstyle
+~~~
+Mahdolliset virheilmoitukset ovat tarkisteltavissa avaamalla selaimella tiedosto *target/site/checkstyle.html*
