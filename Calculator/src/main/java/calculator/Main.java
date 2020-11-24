@@ -1,4 +1,6 @@
-import application.ui.UserInterface;
+package calculator;
+
+import calculator.ui.UserInterface;
 
 public class Main {
     public static void main(String[] args) {

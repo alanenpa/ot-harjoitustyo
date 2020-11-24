@@ -99,6 +99,6 @@ public class KassapaateTest {
     public void kortilleLatausEiToimiNegatiivisellaSummalla() {
         kassapaate.lataaRahaaKortille(kortti, -200);
         assertEquals(1000, kortti.saldo());
-        assertEquals(100000, kassapaate.kassassaRahaa());
+        assertEquals(100000 , kassapaate.kassassaRahaa());
     }
 }
