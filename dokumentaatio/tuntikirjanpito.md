@@ -10,5 +10,5 @@
 | 17.11.| 5    | Projektin konfiguraatiota, käyttöliittymän kehittäminen, CSS-tiedoston lisääminen, Testiluokan luominen | 
 | 19.11.| 2    | Sovelluslogiikan kehittämistä |
 | 23.11.| 3    | Checkstylen konfigurointi, käyttöliittymän kehittäminen, toimintojen lisääminen |
-| 24.11 | 7    | Toimintojen lisääminen, testien kirjoittaminen, reposition päivitys/siistiminen |
+| 24.11 | 7    | Toimintojen lisääminen, testien kirjoittaminen, reposition päivitys/siistiminen, arkkitehtuurikaavion piirto |
 | yht   | 41   | | 
