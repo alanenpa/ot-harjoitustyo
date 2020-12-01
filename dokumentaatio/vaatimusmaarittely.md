@@ -8,10 +8,9 @@ Sovelluksen käynnistyttyä käyttäjälle avautuu ikkuna, jossa näkyy laskimen
 
 ### Jatkokehitysideoita
 - Erilaisten aritmeettisten laskutoimituksien lisääminen laskimeen (esim. potenssi, neliö, neliöjuuri, kertoma, kombinaatio ja permutaatio jne...) "tehty"
-- Kenttä, joka näyttää laskutoimituksen kokonaisuudessaan
+- Kenttä, joka näyttää laskutoimituksen kokonaisuudessaan "tehty"
 - Mahdollisuus laittaa luku muistiin ja palauttaa se sieltä
-- Näkymä, jossa näät "historian" eli lasketut laskut
+- Näkymä, jossa käyttäjä "historian" eli aiemmin sessiossa lasketut laskut
 - Mahdollisuus määritellä muuttuja?
 - Mahdollisuus määritellä funktio?
 - Tila, jossa arvoja voi antaa suoraan kaavoille?
-- Harjoittelutila?
