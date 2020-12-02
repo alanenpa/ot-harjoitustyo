@@ -11,4 +11,6 @@
 | 19.11.| 2    | Sovelluslogiikan kehittämistä |
 | 23.11.| 3    | Checkstylen konfigurointi, käyttöliittymän kehittäminen, toimintojen lisääminen |
 | 24.11 | 7    | Toimintojen lisääminen, testien kirjoittaminen, reposition päivitys/siistiminen, arkkitehtuurikaavion piirto |
-| yht   | 41   | | 
+| 1.12. | 5    | Käyttöliittymään toimintoja lisää, koodin parantelua |
+| 2.12. | 5    | Viikon 5 releasen julkaisu, sekvenssikaavion luonti, käyttöliittymän kehittämistä |
+| yht   | 51   | | 
