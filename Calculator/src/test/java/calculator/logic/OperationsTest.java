@@ -141,4 +141,37 @@ public class OperationsTest {
         assertTrue(o.isUndefined());
     }
 
+    @Test
+    public void modulo() {
+        o.setOperation("mod");
+        assertEquals(0, o.executeOperation(), 0);
+        o.setA(9);
+        o.setB(5);
+        assertEquals(4, o.executeOperation(), 0);
+    }
+
+    @Test
+    public void biggerThanIntegerWorks() {
+        assertFalse(o.biggerThanInteger(1));
+        assertFalse(o.biggerThanInteger(2));
+        o.setA(5E-15);
+        o.setB(0.5E-12);
+        assertFalse(o.biggerThanInteger(1));
+        assertFalse(o.biggerThanInteger(2));
+        o.setA(9E15);
+        o.setB(14E34);
+        assertTrue(o.biggerThanInteger(1));
+        assertTrue(o.biggerThanInteger(2));
+        o.setA(-32460E15);
+        o.setB(-75E23);
+        assertTrue(o.biggerThanInteger(1));
+        assertTrue(o.biggerThanInteger(2));
+    }
+
+    @Test
+    public void addingToMemory() {
+        o.setMemory(5);
+        assertEquals(5, o.getMemory(), 0);
+    }
+
 }

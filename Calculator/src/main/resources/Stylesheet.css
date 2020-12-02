@@ -1,6 +1,14 @@
 .button {
-    -fx-pref-width: 50px;
-    -fx-pref-height: 65px;
+    -fx-pref-width: 65px;
+    -fx-pref-height: 80px;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
+}
+.text-field {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+#header {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
 }

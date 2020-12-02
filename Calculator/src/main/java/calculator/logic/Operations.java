@@ -4,6 +4,7 @@ public class Operations {
 
     public double a;
     public double b;
+    public double memory;
     public String operation;
     public boolean undefined;
 
@@ -46,6 +47,9 @@ public class Operations {
                 break;
             case "nPr":
                 result = nPr();
+                break;
+            case "mod":
+                result = a % b;
                 break;
         }
         return result;
@@ -93,6 +97,24 @@ public class Operations {
             return 0;
         }
         return factorial(this.a) / factorial(this.a - this.b);
+    }
+
+    public boolean biggerThanInteger(double x) {
+        if (x == 1) {
+            return this.a < Integer.MIN_VALUE || this.a > Integer.MAX_VALUE;
+        } else if (x == 2) {
+            return this.b < Integer.MIN_VALUE || this.b > Integer.MAX_VALUE;
+        } else {
+            return false; // won't be used
+        }
+    }
+
+    public void setMemory(double x) {
+        this.memory = x;
+    }
+
+    public double getMemory() {
+        return memory;
     }
 
     public double power() {
