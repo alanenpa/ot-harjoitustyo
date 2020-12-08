@@ -10,7 +10,7 @@ Sovellus on funktiolaskin graafisella käyttöliittymällä, jolla on mahdollist
 
 [Tuntikirjanpito](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-{Käyttöohje](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+[Käyttöohje](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 ## Releaset
 
