@@ -36,6 +36,13 @@ mvn package
 ~~~
 joka luo hakemistoon *target* suoritettavan jar-tiedoston *Calculator-1.0-SNAPSHOT.jar*
 
+### JavaDocin generointi
+
+JavaDoc luodaan komennolla
+~~~
+mvn javadoc:javadoc
+~~~
+
 ### Checkstyle
 
 Tiedostoon checkstyle.xml määritellyt tarkistukset suoritetaan komennolla
