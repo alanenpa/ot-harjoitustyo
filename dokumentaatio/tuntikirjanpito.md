@@ -13,4 +13,6 @@
 | 24.11 | 7    | Toimintojen lisääminen, testien kirjoittaminen, reposition päivitys/siistiminen, arkkitehtuurikaavion piirto |
 | 1.12. | 5    | Käyttöliittymään toimintoja lisää, koodin parantelua |
 | 2.12. | 5    | Viikon 5 releasen julkaisu, sekvenssikaavion luonti, käyttöliittymän kehittämistä |
-| yht   | 51   | | 
+| 7.12. | 4    | SQL:n käytön kertaamista, suunnittelua|
+| 8.12. | 8    | History-luokan luominen ja käyttöönotto, uuden näkymän luominen, alustava JavaDoc-tiedostojen luonti |
+| yht   | 63   | | 
