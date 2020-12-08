@@ -42,6 +42,7 @@ JavaDoc luodaan komennolla
 ~~~
 mvn javadoc:javadoc
 ~~~
+Generoitu JavaDoc löytyy hakemistosta *target/site/apidocs/*
 
 ### Checkstyle
 
