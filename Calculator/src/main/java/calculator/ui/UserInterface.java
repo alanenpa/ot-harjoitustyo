@@ -1,13 +1,16 @@
 package calculator.ui;
 
+import calculator.history.History;
 import calculator.logic.Operations;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -15,10 +18,30 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
+/**
+ * Käyttöliittymän sisältävä luokka
+ */
 public class UserInterface extends Application {
-    Operations logic = new Operations();
-    Text header;
-    TextField field;
+    private Operations logic;
+    private History history;
+    private Text header;
+    private TextField field;
+
+    @Override
+    public void init() throws Exception {
+        logic = new Operations();
+        history = new History();
+        header = new Text();
+        field = new TextField();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        history.getAll();
+        history.endSession();
+    }
 
     public static void main(String[] args) {
         launch(args);
@@ -26,14 +49,16 @@ public class UserInterface extends Application {
 
     @Override
     public void start(Stage stage) {
-        VBox vBox = new VBox();
-        vBox.setPadding(new Insets(10));
-        vBox.setSpacing(15);
-        header = new Text();
+//        primary scene
+        VBox vBox1 = new VBox();
+        Scene primary = new Scene(vBox1);
+        stage.setScene(primary);
+        primary.getStylesheets().add("Stylesheet.css");
+        vBox1.setPadding(new Insets(10));
+        vBox1.setSpacing(15);
         header.setId("header");
         BorderPane bp = new BorderPane();
         bp.setRight(header);
-        field = new TextField();
         field.setAlignment(Pos.BASELINE_RIGHT);
         field.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*") && !newValue.equals("Infinity")) {
@@ -86,12 +111,20 @@ public class UserInterface extends Application {
                 return;
             }
             if (result % 1 == 0 && (result < Integer.MAX_VALUE && result > Integer.MIN_VALUE)) {
-                printCalculation2();
                 field.setText(String.valueOf((int)result));
+                try {
+                    printCalculation2();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
                 return;
             }
-            printCalculation2();
             field.setText(String.valueOf(result));
+            try {
+                printCalculation2();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         });
         keypad.add(equals, 5, 4);
 
@@ -123,8 +156,14 @@ public class UserInterface extends Application {
         Button mod = createOperationButton2("mod");
 
         Button mAdd = mAddButton();
+        mAdd.setId("wide");
         Button mGet = mGetButton();
+        mGet.setId("wide");
         Button mC = mClearButton();
+        mC.setId("wide");
+
+        Button toSecondary = new Button("HISTORY");
+        toSecondary.setId("wide");
 
         keypad.add(add, 5, 0);
         keypad.add(subtract, 5, 1);
@@ -133,6 +172,7 @@ public class UserInterface extends Application {
         keypad.add(mAdd, 6, 0);
         keypad.add(mGet, 6, 1);
         keypad.add(mC, 6, 2);
+        keypad.add(toSecondary, 6, 3);
         keypad.add(power, 1, 0);
         keypad.add(square, 2, 0);
         keypad.add(sqrtRoot, 3, 0);
@@ -141,16 +181,43 @@ public class UserInterface extends Application {
         keypad.add(nPr, 0, 3);
         keypad.add(mod, 0, 4);
 
-        vBox.getChildren().add(bp);
-        vBox.getChildren().add(field);
-        vBox.getChildren().add(keypad);
+        vBox1.getChildren().add(bp);
+        vBox1.getChildren().add(field);
+        vBox1.getChildren().add(keypad);
 
-        Scene scene = new Scene(vBox);
-        scene.getStylesheets().add("Stylesheet.css");
-        stage.setScene(scene);
+//        secondary scene (history)
+        VBox vBox2 = new VBox();
+        vBox2.setPadding(new Insets(20));
+        vBox2.setSpacing(10);
+        Scene secondary = new Scene(vBox2);
+        secondary.getStylesheets().add("Stylesheet.css");
+        ListView<String> listView = new ListView<>();
+        listView.setMinWidth(440);
+        Button toPrimary = new Button("BACK");
+        toPrimary.setPadding(new Insets(10));
+        toPrimary.setOnAction(actionEvent -> {
+            stage.setScene(primary);
+        });
+        toSecondary.setOnAction(actionEvent -> {
+            try {
+                ObservableList<String> list = history.getAll();
+                listView.setItems(list);
+                int index = list.size()-1;
+                listView.scrollTo(index);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            stage.setScene(secondary);
+        });
+        vBox2.getChildren().add(listView);
+        BorderPane bp2 = new BorderPane();
+        bp2.setRight(toPrimary);
+        vBox2.getChildren().add(bp2);
         stage.setTitle("JavaFX Calculator");
-        stage.setWidth(500);
-        stage.setHeight(550);
+//        couldn't make this work with both values active, scenes were jumping off center when switching from one to another
+//        stage.setWidth(600);
+        stage.setHeight(560);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -227,35 +294,41 @@ public class UserInterface extends Application {
         return button;
     }
 
-    private void printCalculation1(int x) {
+    private void printCalculation1(int x) throws SQLException {
         if (x == 1) {
             switch (logic.getOperation()) {
                 case "^2":
                     header.setText("sqr(" + (int)logic.getA() + ")");
+                    history.addEntry(header.getText(), field.getText());
                     break;
                 case "sqrtRoot":
                     header.setText("sqrt(" + (int)logic.getA() + ")");
+                    history.addEntry(header.getText(), field.getText());
                     break;
                 case "n!":
                     header.setText("fact(" + (int)logic.getA() + ")");
+                    history.addEntry(header.getText(), field.getText());
                     break;
             }
         } else if (x == 2) {
             switch (logic.getOperation()) {
                 case "^2":
                     header.setText("sqr(" + logic.getA() + ")");
+                    history.addEntry(header.getText(), field.getText());
                     break;
                 case "sqrtRoot":
                     header.setText("sqrt(" + logic.getA() + ")");
+                    history.addEntry(header.getText(), field.getText());
                     break;
                 case "n!":
                     header.setText("fact(" + logic.getA() + ")");
+                    history.addEntry(header.getText(), field.getText());
                     break;
             }
         }
     }
 
-    private void printCalculation2() {
+    private void printCalculation2() throws SQLException {
 //        when equals is pressed
         String operation = logic.getOperation();
         String text = header.getText();
@@ -268,6 +341,7 @@ public class UserInterface extends Application {
             } else {
                 header.setText(substring + logic.getB() + ") =");
             }
+            history.addEntry(header.getText().substring(0, header.getText().length()-2), field.getText());
             return;
         }
         if (b % 1 == 0 && !logic.biggerThanInteger(1)) {
@@ -280,6 +354,7 @@ public class UserInterface extends Application {
             } else {
                 header.setText(text + " " + (int)b + " =");
             }
+            history.addEntry(header.getText().substring(0, header.getText().length()-2), field.getText());
         } else {
             if (text.contains("=")) {
                 if (a % 1 == 0 && !logic.biggerThanInteger(1)) {
@@ -291,6 +366,7 @@ public class UserInterface extends Application {
             } else {
                 header.setText(text + " " + b + " =");
             }
+            history.addEntry(header.getText().substring(0, header.getText().length()-2), field.getText());
         }
     }
 
@@ -337,9 +413,17 @@ public class UserInterface extends Application {
                 return;
             }
             if (logic.getA() % 1 == 0 && (logic.getA() > Integer.MIN_VALUE && logic.getA() < Integer.MAX_VALUE)) {
-                printCalculation1(1);
+                try {
+                    printCalculation1(1);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
             } else {
-                printCalculation1(2);
+                try {
+                    printCalculation1(2);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
             }
             if (result % 1 == 0 && (result > Integer.MIN_VALUE && result < Integer.MAX_VALUE)) {
                 field.setText(String.valueOf((int)result));

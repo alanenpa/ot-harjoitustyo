@@ -1,11 +1,17 @@
 package calculator.logic;
 
+/**
+ * Luokka, joka suorittaa laskimella tehtävät laskutoimitukset ja pitää yllä muistia
+ */
 public class Operations {
 
     public double a;
     public double b;
     public double memory;
     public String operation;
+    /**
+     * Kertoo onko laskutoimituksen tulos määrittelemätön
+     */
     public boolean undefined;
 
     public void reset() {
@@ -15,6 +21,11 @@ public class Operations {
         this.undefined = false;
     }
 
+    /**
+     * Metodi suorittaa operation-muuttujaan tallennetun operaation
+     * @return Laskutoimituksen tulos
+     * @throws NumberFormatException
+     */
     public double executeOperation() throws NumberFormatException {
         double result = 0;
         switch (this.operation) {
@@ -55,6 +66,10 @@ public class Operations {
         return result;
     }
 
+    /**
+     * Metodi laskee jakolaskun operandeilla A ja B. Jos jakana on 0, metodi asettaa undefined-muuttujan tilaksi true ja palauttaa nollan
+     * @return Laskutoimituksen palautusarvo
+     */
     public double divide() {
         if (this.b == 0) {
             this.undefined = true;
@@ -63,6 +78,10 @@ public class Operations {
         return this.a / this.b;
     }
 
+    /**
+     * Metodi laskee kertoman operandille A
+     * @return Laskutoimituksen tulos
+     */
     public double factorial() {
         if (this.a < 0) {
             this.undefined = true;
@@ -83,6 +102,10 @@ public class Operations {
         return result;
     }
 
+    /**
+     * Metodi laskee kombinaation operandeilla A ja B
+     * @return Laskutoimituksen tulos
+     */
     public double nCr() {
         if (this.b > this.a || this.a < 0 || this.b < 0) {
             this.undefined = true;
@@ -91,6 +114,10 @@ public class Operations {
         return factorial(this.a) / (factorial(this.b) * factorial(this.a - this.b));
     }
 
+    /**
+     * Metodi laskee permutaation operandeilla A ja B
+     * @return Laskutoimituksen tulos
+     */
     public double nPr() {
         if (this.b > this.a || this.a < 0 || this.b < 0) {
             this.undefined = true;
@@ -99,6 +126,11 @@ public class Operations {
         return factorial(this.a) / factorial(this.a - this.b);
     }
 
+    /**
+     * Metodi tarkistaa, onko parametri suurempi kuin int-tyyppisen muuttujan suurin tai pienin arvo
+     * @param x 1 tai 2 sen mukaan, halutaanko tarkistaa operandi A vai B
+     * @return Palauttaa true, jos ehto toteutuu. False, jos ei
+     */
     public boolean biggerThanInteger(double x) {
         if (x == 1) {
             return this.a < Integer.MIN_VALUE || this.a > Integer.MAX_VALUE;
