@@ -6,7 +6,7 @@ kun sovellus lopetetaan.
 
 ### Erilaiset laskutoimitukset
 ##### Peruslaskutoimitukset
-Laskimella voi suorittaa yhteen-, vähennys-, kerto- ja jakolaskuja näppäimillä **+**, **-**, ***** ja **/**.
+Laskimella voi suorittaa yhteen-, vähennys-, kerto- ja jakolaskuja näppäimillä `<testi>`
 
 ### Muistin käyttö
 --
