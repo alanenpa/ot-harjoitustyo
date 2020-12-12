@@ -5,7 +5,8 @@ näkymä vaihtuu ikkunaan, jossa näkyy aiemmin tehdyt laskutoimitukset. BACK-n�
 kun sovellus lopetetaan.
 
 ### Erilaiset laskutoimitukset
---
+##### Peruslaskutoimitukset
+Laskimella voi suorittaa yhteen-, vähennys-, kerto- ja jakolaskuja näppäimillä **+**, **-**, ***** ja **/**.
 
 ### Muistin käyttö
 --
