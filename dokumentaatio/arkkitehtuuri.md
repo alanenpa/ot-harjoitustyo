@@ -24,4 +24,4 @@ Käyttöliittymä sisältää kaksi eri näkymää: päänäkymän ja historian.
 History-luokka luo sovelluksen käynnistyessä sovelluksen juurikansioon tiedoston history.db, johon lasketut laskutoimitukset tallentuvat. Kyseinen tiedosto poistetaan, kun sovellus lopetetaan.
 
 ## Toiminnallisuudet
-Sovellukset eri toiminnallisuudet on kuvattu [käyttöohjeessa](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+Sovellukset eri toiminnallisuudet on kuvattu kattavasti [käyttöohjeessa](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
