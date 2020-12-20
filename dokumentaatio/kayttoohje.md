@@ -38,3 +38,6 @@ Muistia hallinnoidaan seuraavilla näppäimillä:
 * **ADDM**: lisää näytöllä olevan luvun muistiin
 * **MGET**: hakee muistissa olevan luvun näytölle
 * **MC**: tyhjentää muistin (asettaa muistin arvoksi oletusarvon 0)
+
+### Virhesanomat
+Sovelluksen käyttämän tietokantatiedoston pitäisi poistua, kun sovellus lopetetaan. Jos tietokantatiedosto on kuitenkin jäljellä, kun sovellus käynnistetään käyttäjä saa virhesanoman, jossa käyttäjää pyydetään poistamaan history.db-tiedosto sovelluksen juurihakemistosta ja sovelluksen suoritus keskeytetään. Kun tiedosto on poistettu, sovellus käynnistyy normaalisti.
