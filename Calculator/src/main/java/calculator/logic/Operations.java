@@ -43,6 +43,7 @@ public class Operations {
 
     /**
      * Metodi suorittaa operation-muuttujaan tallennetun operaation
+     *
      * @return Laskutoimituksen tulos
      * @throws NumberFormatException
      */
@@ -88,6 +89,7 @@ public class Operations {
 
     /**
      * Metodi laskee jakolaskun operandeilla A ja B. Jos jakana on 0, metodi asettaa undefined-muuttujan tilaksi true ja palauttaa nollan
+     *
      * @return Laskutoimituksen palautusarvo
      */
     public double divide() {
@@ -100,6 +102,7 @@ public class Operations {
 
     /**
      * Metodi laskee kertoman operandille A
+     *
      * @return Laskutoimituksen tulos
      */
     public double factorial() {
@@ -116,6 +119,7 @@ public class Operations {
 
     /**
      * Tätä metodia käyttää vain metodit nCr() ja nPr(). Metodi laskee kertoman.
+     *
      * @param x Luku, josta kertoma lasketaan
      * @return Laskutoimituksen tulos
      */
@@ -129,6 +133,7 @@ public class Operations {
 
     /**
      * Metodi laskee kombinaation operandeilla A ja B
+     *
      * @return Laskutoimituksen tulos
      */
     public double nCr() {
@@ -143,6 +148,7 @@ public class Operations {
 
     /**
      * Metodi laskee permutaation operandeilla A ja B
+     *
      * @return Laskutoimituksen tulos
      */
     public double nPr() {
@@ -150,13 +156,14 @@ public class Operations {
             this.undefined = true;
             return 0;
         }
-        double result =factorial(this.a) / factorial(this.a - this.b);
+        double result = factorial(this.a) / factorial(this.a - this.b);
         if (Double.isNaN(result)) inf = true;
         return result;
     }
 
     /**
      * Metodi tarkistaa, onko parametri suurempi kuin int-tyyppisen muuttujan suurin tai pienin arvo
+     *
      * @param x 1 tai 2 sen mukaan, halutaanko tarkistaa operandi A vai B
      * @return Palauttaa true, jos ehto toteutuu. False, jos ei
      */
@@ -208,9 +215,12 @@ public class Operations {
 
     /**
      * Metodi kertoo, onko laskutoimituksen tulos määrittelemätön
+     *
      * @return True, jos laskutoimitus on määrittelemätön (esim. nollalla jakaessa), false, jos ei
      */
-    public boolean isUndefined() { return undefined; }
+    public boolean isUndefined() {
+        return undefined;
+    }
 
     public boolean isInf() {
         return inf;

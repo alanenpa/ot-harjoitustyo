@@ -29,8 +29,8 @@ public class History {
     public String getExpression(String item) throws SQLException {
         Statement s = db.createStatement();
         int index = item.indexOf("=");
-        String expression = item.substring(0,index+1);
-        String result = item.substring(index+2);
+        String expression = item.substring(0, index + 1);
+        String result = item.substring(index + 2);
         ResultSet r = s.executeQuery("SELECT expression FROM Calculations WHERE expression = '" + expression + "' AND result = '" + result + "'");
         return r.getString(1);
     }
@@ -38,8 +38,8 @@ public class History {
     public String getResult(String item) throws SQLException {
         Statement s = db.createStatement();
         int index = item.indexOf("=");
-        String expression = item.substring(0,index+1);
-        String result = item.substring(index+2);
+        String expression = item.substring(0, index + 1);
+        String result = item.substring(index + 2);
         ResultSet r = s.executeQuery("SELECT result FROM Calculations WHERE expression = '" + expression + "' AND result = '" + result + "'");
         return r.getString(1);
     }
