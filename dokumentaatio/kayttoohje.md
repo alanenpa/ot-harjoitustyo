@@ -40,4 +40,11 @@ Muistia hallinnoidaan seuraavilla näppäimillä:
 * **MC**: tyhjentää muistin (asettaa muistin arvoksi oletusarvon 0)
 
 ### Virhesanomat
+#### "Uutta tietokantatiedostoa ei voitu luoda..."
 Sovelluksen käyttämän tietokantatiedoston pitäisi poistua, kun sovellus lopetetaan. Jos tietokantatiedosto on kuitenkin jäljellä, kun sovellus käynnistetään käyttäjä saa virhesanoman, jossa käyttäjää pyydetään poistamaan history.db-tiedosto sovelluksen juurihakemistosta ja sovelluksen suoritus keskeytetään. Kun tiedosto on poistettu, sovellus käynnistyy normaalisti.
+
+#### "Undefined"
+Jos laskutoimitus ei ole määritelty, tulee laskimen tilakenttään teksti "**Undefined**" laskutoimituksen suorituksen jälkeen. Teksti häipyy, kun käyttäjä syöttää laskimeen uuden laskutoimituksen tai painaa näppäintä **C**
+
+#### "Infinity"
+Jos laskutoimituksen tulos on liian suuri laskimelle käsiteltäväksi, laskutoimituksen tulokseksi näyttöön ilmestyy teksti "**Infinity**". Teksti häipyy, kun käyttäjä syöttää laskimeen uuden laskutoimituksen tai painaa näppäintä **C**
