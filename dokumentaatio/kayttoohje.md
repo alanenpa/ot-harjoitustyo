@@ -21,9 +21,9 @@ kun sovellus lopetetaan.
 ##### Peruslaskutoimitukset
 Laskimella voidaan suorittaa yhteen-, vähennys-, kerto- ja jakolaskuja näppäimillä **+**,**-**,<strong>*</strong> ja **/**.
 ##### Potenssi ja neliöjuuri
-Näppäimellä **x**<sup>**n**</sup> voidaan laskea potenssilaskuja näppäintä painettaessa laskin ottaa kantaluvuksi näytössä olevan luvun ja odottaa käyttäjän syöttävän seuraavaksi eksponentin.
+Näppäimellä **x**<sup>**n**</sup> voidaan laskea potenssilaskuja. Näppäintä painettaessa laskin ottaa kantaluvuksi näytössä olevan luvun ja odottaa käyttäjän syöttävän seuraavaksi eksponentin.
 
-Näppäimellä **x**<sup>**2**</sup> voi laskea suoraan näytössä olevan luvun neliön.
+Näppäimellä **x**<sup>**2**</sup> voi laskea näytössä olevan luvun neliön.
 
 Näppäimellä **&#x221A;** laskin laskee näytössä olevan luvun neliöjuuren.
 ##### Kombinaatio ja permutaatio
