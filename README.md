@@ -20,6 +20,10 @@ Sovellus on funktiolaskin graafisella käyttöliittymällä, jolla on mahdollist
 
 [Viikko 5](https://github.com/alanenpa/ot-harjoitustyo/releases/tag/viikko5)
 
+[Viikko 6](https://github.com/alanenpa/ot-harjoitustyo/releases/tag/viikko6)
+
+[Viikko 7 (Loppupalautus)](https://github.com/alanenpa/ot-harjoitustyo/releases/tag/viikko7)
+
 ## Komentorivitoiminnot
 
 ### Testaus
