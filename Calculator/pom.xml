@@ -13,7 +13,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>12.0.2</version>
+            <version>15.0.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -53,6 +53,8 @@
                 <configuration>
                     <excludes>
                         <exclude>/calculator/ui/*</exclude>
+                        <exclude>/calculator/history/*</exclude>
+                        <exclude>/calculator/Main.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
