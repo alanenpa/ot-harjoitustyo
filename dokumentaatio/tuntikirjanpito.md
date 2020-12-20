@@ -17,5 +17,5 @@
 | 8.12. | 8    | History-luokan luominen ja käyttöönotto, uuden näkymän luominen, alustava JavaDoc-tiedostojen luonti |
 | 12.12.| 1    | Käyttöohjeen kirjoittamista |
 | 19.12.| 2    | Luokkien parantelua |
-| 20.12.| 10   | Kaiken viimeistely, Testausdokumentin luonti, arkkitehtuuridokumentin ja käyttöohjeen parantaminen. Historia-näkymän konfigurointi ja kehitys loppuun. Viimeisen releasen julkaisu. |
+| 20.12.| 10   | Kaiken viimeistely, testausdokumentin luonti, arkkitehtuuridokumentin ja käyttöohjeen parantaminen. Historia-näkymän konfigurointi ja kehitys loppuun. Viimeisen releasen julkaisu. |
 | yht   | 76   | | 
