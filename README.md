@@ -8,9 +8,13 @@ Sovellus on funktiolaskin graafisella käyttöliittymällä, jolla on mahdollist
 
 [Vaatimusmäärittely](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
+[Käyttöohje](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
+[Testausdokumentti](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+
 [Tuntikirjanpito](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-[Käyttöohje](https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 
 ## Releaset
 
