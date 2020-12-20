@@ -3,12 +3,14 @@ package calculator.ui;
 import calculator.history.History;
 import calculator.logic.Operations;
 import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -28,18 +30,22 @@ public class UserInterface extends Application {
     private History history;
     private Text header;
     private TextField field;
+     boolean SqlError;
 
     @Override
-    public void init() throws Exception {
+    public void init() {
         logic = new Operations();
-        history = new History();
         header = new Text();
         field = new TextField();
+        try {
+            history = new History();
+        } catch (SQLException e) {
+            SqlError = true;
+        }
     }
 
     @Override
     public void stop() throws Exception {
-        history.getAll();
         history.endSession();
     }
 
@@ -49,6 +55,14 @@ public class UserInterface extends Application {
 
     @Override
     public void start(Stage stage) {
+        if (SqlError) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Virhe");
+            alert.setHeaderText(null);
+            alert.setContentText("Uutta tietokantatiedostoa ei voitu luoda. Poista sovelluksen juurihakemistosta vanha history.db-tiedosto!");
+            alert.showAndWait();
+            System.exit(1);
+        }
 //        primary scene
         VBox vBox1 = new VBox();
         Scene primary = new Scene(vBox1);
@@ -92,7 +106,10 @@ public class UserInterface extends Application {
                 emptyStringError();
                 return;
             }
-            if (logic.getOperation() == null) return;
+            if (logic.getOperation() == null ||
+                logic.getOperation().equals("^2") ||
+                logic.getOperation().equals("n!") ||
+                logic.getOperation().equals("sqrtRoot")) return;
             double b;
             if (!logic.isUndefined()) {
                 if (header.getText().contains("=")) {
@@ -110,20 +127,19 @@ public class UserInterface extends Application {
                 field.clear();
                 return;
             }
+            if (logic.isInf()) field.setText("Infinity");
             if (result % 1 == 0 && (result < Integer.MAX_VALUE && result > Integer.MIN_VALUE)) {
-                field.setText(String.valueOf((int)result));
+                if (!logic.isInf()) field.setText(String.valueOf((int)result));
                 try {
                     printCalculation2();
                 } catch (SQLException throwables) {
-                    throwables.printStackTrace();
                 }
                 return;
             }
-            field.setText(String.valueOf(result));
+            if (!logic.isInf()) field.setText(String.valueOf(result));
             try {
                 printCalculation2();
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
             }
         });
         keypad.add(equals, 5, 4);
@@ -195,6 +211,19 @@ public class UserInterface extends Application {
         listView.setMinWidth(440);
         Button toPrimary = new Button("BACK");
         toPrimary.setPadding(new Insets(10));
+        listView.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends String> ov, String old_val, String new_val) -> {
+            String selectedItem = listView.getSelectionModel().getSelectedItem();
+            if (selectedItem == null) return;
+            String expression = "", result = "";
+            try {
+                expression = history.getExpression(selectedItem);
+                result = history.getResult(selectedItem);
+            } catch (SQLException throwables) {
+            }
+            header.setText(expression);
+            field.setText(result);
+            toPrimary.fire();
+        });
         toPrimary.setOnAction(actionEvent -> {
             stage.setScene(primary);
         });
@@ -204,8 +233,8 @@ public class UserInterface extends Application {
                 listView.setItems(list);
                 int index = list.size()-1;
                 listView.scrollTo(index);
+                listView.getSelectionModel().clearSelection();
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
             }
             stage.setScene(secondary);
         });
@@ -298,30 +327,30 @@ public class UserInterface extends Application {
         if (x == 1) {
             switch (logic.getOperation()) {
                 case "^2":
-                    header.setText("sqr(" + (int)logic.getA() + ")");
+                    header.setText("sqr(" + (int)logic.getA() + ") =");
                     history.addEntry(header.getText(), field.getText());
                     break;
                 case "sqrtRoot":
-                    header.setText("sqrt(" + (int)logic.getA() + ")");
+                    header.setText("sqrt(" + (int)logic.getA() + ") =");
                     history.addEntry(header.getText(), field.getText());
                     break;
                 case "n!":
-                    header.setText("fact(" + (int)logic.getA() + ")");
+                    header.setText("fact(" + (int)logic.getA() + ") =");
                     history.addEntry(header.getText(), field.getText());
                     break;
             }
         } else if (x == 2) {
             switch (logic.getOperation()) {
                 case "^2":
-                    header.setText("sqr(" + logic.getA() + ")");
+                    header.setText("sqr(" + logic.getA() + ") =");
                     history.addEntry(header.getText(), field.getText());
                     break;
                 case "sqrtRoot":
-                    header.setText("sqrt(" + logic.getA() + ")");
+                    header.setText("sqrt(" + logic.getA() + ") =");
                     history.addEntry(header.getText(), field.getText());
                     break;
                 case "n!":
-                    header.setText("fact(" + logic.getA() + ")");
+                    header.setText("fact(" + logic.getA() + ") =");
                     history.addEntry(header.getText(), field.getText());
                     break;
             }
@@ -341,7 +370,7 @@ public class UserInterface extends Application {
             } else {
                 header.setText(substring + logic.getB() + ") =");
             }
-            history.addEntry(header.getText().substring(0, header.getText().length()-2), field.getText());
+            history.addEntry(header.getText(), field.getText());
             return;
         }
         if (b % 1 == 0 && !logic.biggerThanInteger(1)) {
@@ -354,7 +383,7 @@ public class UserInterface extends Application {
             } else {
                 header.setText(text + " " + (int)b + " =");
             }
-            history.addEntry(header.getText().substring(0, header.getText().length()-2), field.getText());
+            history.addEntry(header.getText(), field.getText());
         } else {
             if (text.contains("=")) {
                 if (a % 1 == 0 && !logic.biggerThanInteger(1)) {
@@ -366,7 +395,7 @@ public class UserInterface extends Application {
             } else {
                 header.setText(text + " " + b + " =");
             }
-            history.addEntry(header.getText().substring(0, header.getText().length()-2), field.getText());
+            history.addEntry(header.getText(), field.getText());
         }
     }
 
@@ -412,24 +441,22 @@ public class UserInterface extends Application {
                 field.clear();
                 return;
             }
+            if (result % 1 == 0 && (result > Integer.MIN_VALUE && result < Integer.MAX_VALUE)) {
+                field.setText(String.valueOf((int)result));
+            } else {
+                field.setText(String.valueOf(result));
+            }
             if (logic.getA() % 1 == 0 && (logic.getA() > Integer.MIN_VALUE && logic.getA() < Integer.MAX_VALUE)) {
                 try {
                     printCalculation1(1);
                 } catch (SQLException throwables) {
-                    throwables.printStackTrace();
                 }
             } else {
                 try {
                     printCalculation1(2);
                 } catch (SQLException throwables) {
-                    throwables.printStackTrace();
                 }
             }
-            if (result % 1 == 0 && (result > Integer.MIN_VALUE && result < Integer.MAX_VALUE)) {
-                field.setText(String.valueOf((int)result));
-                return;
-            }
-            field.setText(String.valueOf(result));
         });
         return button;
     }

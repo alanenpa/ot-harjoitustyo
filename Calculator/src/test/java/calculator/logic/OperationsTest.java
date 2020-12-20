@@ -23,6 +23,7 @@ public class OperationsTest {
         assertEquals(0, o.getB(), 0);
         assertNull(o.getOperation());
         assertFalse(o.isUndefined());
+        assertFalse(o.isInf());
     }
 
     @Test
@@ -105,9 +106,18 @@ public class OperationsTest {
         assertTrue(o.isUndefined());
         o.setA(-2);
         o.setB(8);
-        o.setOperation("nCr");
         assertEquals(0, o.executeOperation(), 0);
         assertTrue(o.isUndefined());
+
+    }
+
+    @Test
+    public void CombinationWithTooBigNumbers() {
+        o.setA(9999);
+        o.setB(9);
+        o.setOperation("nCr");
+        o.executeOperation();
+        assertTrue(o.isInf());
     }
 
     @Test
@@ -136,9 +146,17 @@ public class OperationsTest {
         assertTrue(o.isUndefined());
         o.setA(-2);
         o.setB(8);
-        o.setOperation("nPr");
         assertEquals(0, o.executeOperation(), 0);
         assertTrue(o.isUndefined());
+    }
+
+    @Test
+    public void PermutationWithTooBigNumbers() {
+        o.setA(9999);
+        o.setB(9);
+        o.setOperation("nPr");
+        o.executeOperation();
+        assertTrue(o.isInf());
     }
 
     @Test

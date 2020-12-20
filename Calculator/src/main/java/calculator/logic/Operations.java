@@ -5,20 +5,40 @@ package calculator.logic;
  */
 public class Operations {
 
+    /**
+     * Operandi a
+     */
     public double a;
+    /**
+     * Operandi b
+     */
     public double b;
+    /**
+     * Muistiin tallennettava luku
+     */
     public double memory;
+    /**
+     * Laskutoimituksen tyyppi
+     */
     public String operation;
     /**
-     * Kertoo onko laskutoimituksen tulos määrittelemätön
+     * Kertoo, onko laskutoimituksen tulos määrittelemätön
      */
     public boolean undefined;
+    /**
+     * Kertoo, onko laskutoimituksen tulos liian suuri
+     */
+    public boolean inf;
 
+    /**
+     * Resetoi laskimen arvot
+     */
     public void reset() {
         this.a = 0;
         this.b = 0;
         this.operation = null;
         this.undefined = false;
+        this.inf = false;
     }
 
     /**
@@ -94,6 +114,11 @@ public class Operations {
         return result;
     }
 
+    /**
+     * Tätä metodia käyttää vain metodit nCr() ja nPr(). Metodi laskee kertoman.
+     * @param x Luku, josta kertoma lasketaan
+     * @return Laskutoimituksen tulos
+     */
     private double factorial(double x) {
         double result = 1;
         for (int i = 2; i <= x; i++) {
@@ -111,7 +136,9 @@ public class Operations {
             this.undefined = true;
             return 0;
         }
-        return factorial(this.a) / (factorial(this.b) * factorial(this.a - this.b));
+        double result = factorial(this.a) / (factorial(this.b) * factorial(this.a - this.b));
+        if (Double.isNaN(result)) inf = true;
+        return result;
     }
 
     /**
@@ -123,7 +150,9 @@ public class Operations {
             this.undefined = true;
             return 0;
         }
-        return factorial(this.a) / factorial(this.a - this.b);
+        double result =factorial(this.a) / factorial(this.a - this.b);
+        if (Double.isNaN(result)) inf = true;
+        return result;
     }
 
     /**
@@ -177,5 +206,13 @@ public class Operations {
         this.operation = operation;
     }
 
+    /**
+     * Metodi kertoo, onko laskutoimituksen tulos määrittelemätön
+     * @return True, jos laskutoimitus on määrittelemätön (esim. nollalla jakaessa), false, jos ei
+     */
     public boolean isUndefined() { return undefined; }
+
+    public boolean isInf() {
+        return inf;
+    }
 }
