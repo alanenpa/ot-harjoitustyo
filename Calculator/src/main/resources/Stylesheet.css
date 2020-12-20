@@ -8,6 +8,9 @@
     -fx-font-weight: bold;
     -fx-font-size: 20px;
 }
+.list-cell {
+    -fx-font-weight: bold;
+}
 #header {
     -fx-font-weight: bold;
     -fx-font-size: 14px;
