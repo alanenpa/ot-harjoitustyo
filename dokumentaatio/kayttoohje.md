@@ -3,6 +3,11 @@
 Laskimen käynnistyessä näytölle avautuu näkymä, jossa näkyy laskimen näyttö sekä eri laskutoimituksia varten olevia näppäimiä. HISTORY-näppäintä painamalla
 näkymä vaihtuu ikkunaan, jossa näkyy aiemmin tehdyt laskutoimitukset. BACK-näppäintä painamalla käyttäjä voi siirtyä takaisin päänäkymään. Laskimen historia nollaantuu, 
 kun sovellus lopetetaan.
+## Päänäkymä
+<img src="https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/P%C3%A4%C3%A4n%C3%A4kym%C3%A4.png" width="750" height="607">
+
+## Historia-näkymä
+<img src="https://github.com/alanenpa/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Historia.png" width="775" height="590">
 
 ### Näppäimet
 #### "C"
